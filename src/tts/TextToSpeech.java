@@ -1,5 +1,7 @@
 package tts;
 
+import java.io.File;
+
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
@@ -29,9 +31,15 @@ import marytts.signalproc.effects.AudioEffects;
 public class TextToSpeech {
     private AudioPlayer tts;
     private MaryInterface marytts;
+    private File log = new File("log/server.log");
 
     /** Constructor */
     public TextToSpeech() {
+        if (log.delete()) {
+            System.out.println("Log successfully reset.");
+        } else {
+            System.out.println("Log reset unsuccessful.");
+        }
         try {
             marytts = new LocalMaryInterface();
         } catch (MaryConfigurationException ex) {
