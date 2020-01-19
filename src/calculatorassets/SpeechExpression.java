@@ -1,6 +1,8 @@
 package calculatorassets;
 
-/* Complete list of functions:
+/* Copyright 2019 dinitrogen-tetroxide
+ *
+ * Complete list of functions:
  * - Addition
  * - Subtraction
  * - Multiplication

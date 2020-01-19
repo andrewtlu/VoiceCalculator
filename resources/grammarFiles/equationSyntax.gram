@@ -1,6 +1,8 @@
 #JSGF 1.0
 grammar equationSyntax;
 
+// Copyright 2019 dinitrogen-tetroxide
+
 // Definitions for numbers
 <zero> = ( zero | oh );
 <validNumbers> = ( one | two | three | four | five | six | seven | eight | nine );

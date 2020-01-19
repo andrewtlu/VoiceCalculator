@@ -3,7 +3,7 @@ package main;
 /* Code base:
  * https://github.com/goxr3plus/Java-Speech-Recognizer-Tutorial--Calculator/blob/master/Tutorial%201/src/model/SpeechRecognizerMain.java
  *
- * Copyright 2017 goxr3plus, Copyright 2019 Andrew Lu
+ * Copyright 2017 goxr3plus, Copyright 2019 dinitrogen-tetroxide
  *
  * Original code modified and used as a starting point of project (Specifically, the multithreading parts)
  *
