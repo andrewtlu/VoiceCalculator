@@ -31,7 +31,7 @@ import marytts.signalproc.effects.AudioEffects;
 public class TextToSpeech {
     private AudioPlayer tts;
     private MaryInterface marytts;
-    private File log = new File("log/server.log");
+    private static File log = new File("log/server.log");
 
     /** Constructor */
     public TextToSpeech() {
