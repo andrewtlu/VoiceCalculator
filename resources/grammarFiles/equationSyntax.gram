@@ -1,0 +1,41 @@
+#JSGF 1.0
+grammar equationSyntax;
+
+// Definitions for numbers
+<zero> = ( zero | oh );
+<validNumbers> = ( one | two | three | four | five | six | seven | eight | nine );
+<digit> = ( <zero> | <validNumbers> );
+<basePattern> = ( ( <validNumbers> | ( ten | eleven | twelve | thirteen | fourteen | fifteen | sixteen | seventeen | eighteen | nineteen ) | ( ( twenty | thirty | forty | fifty | sixty | seventy | eighty | ninety ) [ <validNumbers> ] ) ) | ( ( <validNumbers> hundred ) ( [ twenty | thirty | forty | fifty | sixty | seventy | eighty | ninety ] [ <validNumbers> ] ) | ( ten | eleven | twelve | thirteen | fourteen | fifteen | sixteen | seventeen | eighteen | nineteen ) ) );
+<structurePattern> = ( [ negative ] [ ( [ <basePattern> billion ] [ <basePattern> million ] [ <basePattern> thousand ] [ <basePattern> ] ) | ( <zero> ) ] [ point [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] ] );
+
+// Define operators
+<add> = ( plus );
+<subtract> = ( minus );
+<divide> = ( over | ( divided by ) );
+<multiply> = ( times | ( multiplied by ) );
+<exponentRaise> = ( to the power of );
+<sqrt> = ( ( [ the ] square root [ of ] ) | ( [ the ] root [ of ] ) );
+<percent> = ( percent );
+<factorial> = ( fact or eel );
+<sin> = ( [ the ] sign of );
+<cos> = ( [ the ] co sign of );
+<tan> = ( [ the ] tangent of );
+<csc> = ( [ the ] co see can't of );
+<sec> = ( [ the ] see can't of );
+<cot> = ( [ the ] co tangent of );
+<log10> = ( [ the ] log of );
+<ln> = ( [ the ] natural log of );
+
+// Defines a term & different types of operator
+<term> = ( <structurePattern> | answer | pi | e );
+<group> = ( ( left parentheses ) ( <term> | <expression> ) ( right parentheses ) ) | ( <term> | <expression> );
+
+<leftRightOperator> = ( <add> | <subtract> | <divide> | <multiply> | <exponentRaise> );
+<leftOperator> = ( <factorial> | <percent> );
+<rightOperator> = ( <sqrt> | <sin> | <cos> | <tan> | <csc> | <sec> | <cot> | <log10> | <ln> );
+
+// Defines an expression
+<appliedLeftRight> = ( <group> <leftRightOperator> <group> );
+<appliedLeft> = ( <group> <leftOperator> );
+<appliedRight> = ( <rightOperator> <group> );
+public <expression> = ( <appliedLeftRight> | <appliedLeft> | <appliedRight> );

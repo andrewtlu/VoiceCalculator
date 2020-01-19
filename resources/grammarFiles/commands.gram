@@ -1,0 +1,21 @@
+#JSGF 1.0
+grammar commands;
+
+import <equationSyntax.*>;
+
+public <keyphrase> = (voice calculator);  // Keyphrase to listen for
+
+// Command starters
+<calculateKeyphrase> = ( calculate | compute | what is ) [ the value of ];
+<getKeyphrase> = ( get | what was ) [ the ];
+<setKeyphrase> = ( set | change ) [ the ];
+
+// Extra words
+<again> = [ again ];
+
+// Commands
+public <calculate> = <calculateKeyphrase> <equationSyntax.expression>;
+public <setAngleMode> = <setKeyphrase> angle mode to ( degrees | ray dee ins );
+public <setCalculatorMode> = <setKeyphrase> calculator mode to ( express | regular | normal );
+public <getAnswers> = <getKeyphrase> ( previous ( answer | result ) | ( answer | result ) ) <again>;
+public <getMode> = ( what is ) [ the ] [ current ] ( ( angle mode ) | ( calculator mode ) );
