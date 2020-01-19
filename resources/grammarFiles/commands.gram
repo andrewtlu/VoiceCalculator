@@ -1,6 +1,8 @@
 #JSGF 1.0
 grammar commands;
 
+// Copyright 2019 dinitrogen-tetroxide
+
 import <equationSyntax.*>;
 
 public <keyphrase> = (voice calculator);  // Keyphrase to listen for
