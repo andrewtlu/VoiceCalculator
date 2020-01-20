@@ -15,7 +15,7 @@ Feel free to download the source code and the releases. The program is written i
 
 ## Authors
 * **Andrew Lu** ([rocketFuel](https://github.com/dinitrogen-tetroxide))
-* See all the [contributors] (https://github.com/dinitrogen-tetroxide/VoiceCalculator/graphs/contributors)
+* See all the [contributors](https://github.com/dinitrogen-tetroxide/VoiceCalculator/graphs/contributors)
 
 ## Licensing
 * Project is under Apache 2.0 license, see [LICENSE.md](LICENSE.md) for details
