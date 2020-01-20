@@ -1,5 +1,6 @@
-# Ignore class files
+# Ignore class files & out folder
 *.class
+/out
 
 # Ignore MaryTTS server log
-/log
+*.log

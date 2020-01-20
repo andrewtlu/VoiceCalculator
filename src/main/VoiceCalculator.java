@@ -95,39 +95,7 @@ public class VoiceCalculator {
 
         tts.setVoice("cmu-rms-hsmm");
 
-        startResourcesThread();  //Check if needed resources are available
         startSpeechRecognition();  //Start speech recognition thread
-    }
-
-    /**  Starting a Thread that checks if the resources needed to the SpeechRecognition library are available */
-    private void startResourcesThread() {
-        if (resourcesThreadRunning)
-            logger.log(Level.INFO, "Resources Thread already running.\n");
-        else {
-            // Calls submit method
-            eventsExecutorService.submit(() -> {
-                try {
-                    // Locks usage
-                    resourcesThreadRunning = true;
-
-                    // Detect if the microphone is available
-                    while (true) {
-
-                        // Mic check //todo: Add speaker check?
-                        if (!AudioSystem.isLineSupported(Port.Info.MICROPHONE)) {
-                            logger.log(Level.INFO, "Microphone is not available.\n");
-                        }
-
-                        // Sleep thread
-                        Thread.sleep(500);
-                    }
-
-                } catch (InterruptedException ex) {
-                    logger.log(Level.WARNING, null, ex);
-                    resourcesThreadRunning = false;
-                }
-            });
-        }
     }
 
     /** Starts the Speech Recognition Thread */
