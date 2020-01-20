@@ -1,0 +1,5 @@
+# Ignore class files
+*.class
+
+# Ignore MaryTTS server log
+/log

@@ -19,31 +19,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/VoiceCalculator.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/grammarFiles/commands.gram">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#VoiceCalculator#0;class#VoiceCalculator#0" />
-                <element signature="method#startResourcesThread#0;class#VoiceCalculator#0" />
-                <element signature="method#startSpeechRecognition#0;class#VoiceCalculator#0" />
-                <element signature="method#makeDecision#0;class#VoiceCalculator#0" />
-                <element signature="method#makeDecisionExpress#0;class#VoiceCalculator#0" />
-                <element signature="e#12557#13672#0" />
-                <element signature="method#commandMatches#0;class#VoiceCalculator#0" />
-                <element signature="method#processCommand#0;class#VoiceCalculator#0" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log/server.log">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="150" selection-start-line="150" selection-end-line="150" />
+            <state relative-caret-position="351">
+              <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#SpeechExpression#0;class#SpeechExpression#0" />
+                <element signature="method#SpeechExpression#1;class#SpeechExpression#0" />
+                <element signature="method#buildNumberMap#0;class#SpeechExpression#0" />
+                <element signature="method#convertToNumberValue#0;class#SpeechExpression#0" />
+                <element signature="method#buildWordMap#0;class#SpeechExpression#0" />
+                <element signature="method#setConvertedExpression#0;class#SpeechExpression#0" />
+                <element signature="method#setAcousticRepresentation#0;class#SpeechExpression#0" />
+                <element signature="method#getPreviousResult#0;class#SpeechExpression#0" />
+                <element signature="method#getResult#0;class#SpeechExpression#0" />
+                <element signature="method#isValid#0;class#SpeechExpression#0" />
+                <element signature="method#calculateResult#0;class#SpeechExpression#0" />
+                <element signature="method#strIsEqual#0;class#SpeechExpression#0" />
+                <element signature="method#isValidNumber#0;class#SpeechExpression#0" />
+                <element signature="method#parseAS#0;class#SpeechExpression#0" />
+                <element signature="method#parseMD#0;class#SpeechExpression#0" />
+                <element signature="method#parseGroup#0;class#SpeechExpression#0" />
+                <element signature="method#factorial#0;class#SpeechExpression#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,25 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tts/TextToSpeech.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#speak#0;class#TextToSpeech#0" />
-                <element signature="method#speak#1;class#TextToSpeech#0" />
-                <element signature="method#stopSpeaking#0;class#TextToSpeech#0" />
-                <element signature="e#3718#3719#0" expanded="true" />
-                <element signature="e#3757#3758#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -122,23 +114,23 @@
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/src/marytts/AudioSystem.java" />
         <option value="$PROJECT_DIR$/src/marytts/AudioPlayer.java" />
-        <option value="$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram" />
         <option value="$PROJECT_DIR$/Quarantine/AudioPlayer.java" />
         <option value="$PROJECT_DIR$/Quarantine/TextToSpeech.java" />
-        <option value="$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java" />
         <option value="$PROJECT_DIR$/log/server.log" />
-        <option value="$PROJECT_DIR$/src/tts/AudioPlayer.java" />
         <option value="$PROJECT_DIR$/src/grammarfiles/equationSyntax.gram" />
         <option value="$PROJECT_DIR$/src/grammarfiles/commands.gram" />
         <option value="$PROJECT_DIR$/grammarfiles/commands.gram" />
         <option value="$PROJECT_DIR$/grammarfiles/equationSyntax.gram" />
-        <option value="$PROJECT_DIR$/resources/grammarFiles/commands.gram" />
         <option value="$PROJECT_DIR$/src/main/VoiceCalculator.java" />
+        <option value="$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram" />
         <option value="$PROJECT_DIR$/src/tts/TextToSpeech.java" />
+        <option value="$PROJECT_DIR$/src/tts/AudioPlayer.java" />
+        <option value="$PROJECT_DIR$/resources/grammarFiles/commands.gram" />
+        <option value="$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="705" />
     <option name="y" value="-25" />
     <option name="width" value="980" />
@@ -149,7 +141,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -158,10 +149,39 @@
               <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
               <item name="VoiceCalculator" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoiceCalculator" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoiceCalculator" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="grammarFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoiceCalculator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoiceCalculator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="calculatorassets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoiceCalculator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -225,8 +245,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28926176" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29731545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -235,7 +256,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" x="769" y="30" width="767" height="793" id="Run" maximized="true" order="2" weight="0.34560907" />
+      <window_info active="true" anchor="bottom" x="769" y="30" width="767" height="793" id="Run" maximized="true" order="2" visible="true" weight="0.34560907" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -329,10 +350,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/VoiceCalculator/calculatorassets/SpeechExpression.class" />
     <entry file="file://$PROJECT_DIR$/src/calculatorassets/SpeechNumber.java" />
+    <entry file="file://$PROJECT_DIR$/VoiceCalculator.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/VoiceCalculator/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/log/server.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tts/TextToSpeech.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#speak#0;class#TextToSpeech#0" />
+            <element signature="method#speak#1;class#TextToSpeech#0" />
+            <element signature="method#stopSpeaking#0;class#TextToSpeech#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tts/AudioPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="142">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Status#0;class#AudioPlayer#0" />
@@ -351,82 +397,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VoiceCalculator.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="40" column="70" selection-start-line="40" selection-start-column="70" selection-end-line="40" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#SpeechExpression#0;class#SpeechExpression#0" />
-            <element signature="method#SpeechExpression#1;class#SpeechExpression#0" />
-            <element signature="method#buildNumberMap#0;class#SpeechExpression#0" />
-            <element signature="method#replaceWordNumbers#0;class#SpeechExpression#0" />
-            <element signature="method#convertToNumberValue#0;class#SpeechExpression#0" />
-            <element signature="method#buildWordMap#0;class#SpeechExpression#0" />
-            <element signature="method#setConvertedExpression#0;class#SpeechExpression#0" />
-            <element signature="method#setAcousticRepresentation#0;class#SpeechExpression#0" />
-            <element signature="method#getPreviousResult#0;class#SpeechExpression#0" />
-            <element signature="method#getResult#0;class#SpeechExpression#0" />
-            <element signature="method#isValid#0;class#SpeechExpression#0" />
-            <element signature="method#strIsEqual#0;class#SpeechExpression#0" />
-            <element signature="method#isValidNumber#0;class#SpeechExpression#0" />
-            <element signature="method#parseAS#0;class#SpeechExpression#0" />
-            <element signature="method#parseMD#0;class#SpeechExpression#0" />
-            <element signature="method#parseGroup#0;class#SpeechExpression#0" />
-            <element signature="method#factorial#0;class#SpeechExpression#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/VoiceCalculator/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tts/TextToSpeech.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#speak#0;class#TextToSpeech#0" />
-            <element signature="method#speak#1;class#TextToSpeech#0" />
-            <element signature="method#stopSpeaking#0;class#TextToSpeech#0" />
-            <element signature="e#3718#3719#0" expanded="true" />
-            <element signature="e#3757#3758#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/grammarFiles/commands.gram">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/server.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/VoiceCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        <state relative-caret-position="935">
+          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#VoiceCalculator#0;class#VoiceCalculator#0" />
@@ -437,6 +411,47 @@
             <element signature="e#12557#13672#0" />
             <element signature="method#commandMatches#0;class#VoiceCalculator#0" />
             <element signature="method#processCommand#0;class#VoiceCalculator#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/grammarFiles/commands.gram">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#SpeechExpression#0;class#SpeechExpression#0" />
+            <element signature="method#SpeechExpression#1;class#SpeechExpression#0" />
+            <element signature="method#buildNumberMap#0;class#SpeechExpression#0" />
+            <element signature="method#convertToNumberValue#0;class#SpeechExpression#0" />
+            <element signature="method#buildWordMap#0;class#SpeechExpression#0" />
+            <element signature="method#setConvertedExpression#0;class#SpeechExpression#0" />
+            <element signature="method#setAcousticRepresentation#0;class#SpeechExpression#0" />
+            <element signature="method#getPreviousResult#0;class#SpeechExpression#0" />
+            <element signature="method#getResult#0;class#SpeechExpression#0" />
+            <element signature="method#isValid#0;class#SpeechExpression#0" />
+            <element signature="method#calculateResult#0;class#SpeechExpression#0" />
+            <element signature="method#strIsEqual#0;class#SpeechExpression#0" />
+            <element signature="method#isValidNumber#0;class#SpeechExpression#0" />
+            <element signature="method#parseAS#0;class#SpeechExpression#0" />
+            <element signature="method#parseMD#0;class#SpeechExpression#0" />
+            <element signature="method#parseGroup#0;class#SpeechExpression#0" />
+            <element signature="method#factorial#0;class#SpeechExpression#0" />
           </folding>
         </state>
       </provider>

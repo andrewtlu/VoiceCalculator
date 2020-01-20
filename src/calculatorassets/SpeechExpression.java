@@ -82,10 +82,11 @@ public class SpeechExpression {
 
         int i = 0;
         while (i < splitString.length) {
-            if (numberMap.get(splitString[i]) != null || splitString[i].equals(("point"))) runHasNumber = true;
+            if (numberMap.get(splitString[i]) != null || splitString[i].equals(("point")) || splitString[i].equals("negative")) runHasNumber = true;
 
             // Marks number start and end indices
-            while (i < splitString.length && (numberMap.get(splitString[i]) != null || splitString[i].equals(("point")))) {
+            while (i < splitString.length && (numberMap.get(splitString[i]) != null || splitString[i].equals(("point"))
+                    || splitString[i].equals("negative"))) {
                 splitNumber.append(splitString[i++]).append(" ");
             }
 
