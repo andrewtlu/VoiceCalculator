@@ -1,0 +1,2 @@
+Main-Class: main.VoiceCalculator
+Class-Path: lib\marytts-builder-5.2-jar-with-dependencies.jar lib\marytts-lang-en-5.2.jar lib\sphinx4-core-5prealpha-20160628.232526-10.jar lib\sphinx4-data-5prealpha-20160628.232535-10.jar lib\voice-cmu-rms-hsmm-5.2.jar
