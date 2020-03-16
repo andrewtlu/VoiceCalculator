@@ -5,19 +5,17 @@ grammar commands;
 
 import <equationSyntax.*>;
 
-public <keyphrase> = (voice calculator);  // Keyphrase to listen for
+<keyphrase> = (voice calculator);  // Keyphrase to listen for
 
 // Command starters
 <calculateKeyphrase> = ( calculate | compute | what is ) [ the value of ];
 <getKeyphrase> = ( get | what was ) [ the ];
 <setKeyphrase> = ( set | change ) [ the ];
 
-// Extra words
-<again> = [ again ];
-
 // Commands
-public <calculate> = <calculateKeyphrase> <equationSyntax.expression>;
-public <setAngleMode> = <setKeyphrase> angle mode to ( degrees | ray dee ins );
-public <setCalculatorMode> = <setKeyphrase> calculator mode to ( express | regular | normal );
-public <getAnswers> = <getKeyphrase> ( previous ( answer | result ) | ( answer | result ) ) <again>;
-public <getMode> = ( what is ) [ the ] [ current ] ( ( angle mode ) | ( calculator mode ) );
+<calculate> = <calculateKeyphrase> <equationSyntax.expression>;
+<setAngleMode> = <setKeyphrase> angle mode to ( degrees | ray dee ins );
+<setCalculatorMode> = <setKeyphrase> calculator mode to ( express | regular | normal );
+<getAnswers> = <getKeyphrase> ( previous ( answer | result ) | ( answer | result ) );
+<getMode> = ( what is ) [ the ] [ current ] ( ( angle mode ) | ( calculator mode ) );
+public <command> = \30\ <keyphrase> | \30\ <calculate> | \5\ <setAngleMode> | \5\ <setCalculatorMode> | \15\ <getAnswers> | \5\ <getMode>;

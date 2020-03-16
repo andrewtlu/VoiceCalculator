@@ -45,8 +45,6 @@ import edu.cmu.sphinx.api.LiveSpeechRecognizer;
 import edu.cmu.sphinx.api.SpeechResult;
 import tts.TextToSpeech;
 
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Port;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -65,7 +63,6 @@ public class VoiceCalculator {
 
     // Thread variables
     private boolean speechRecognizerThreadRunning = false;
-    private boolean resourcesThreadRunning;
     private ExecutorService eventsExecutorService = Executors.newFixedThreadPool(2);
 
     /** Constructor for class */
@@ -347,8 +344,8 @@ public class VoiceCalculator {
 
     /** Strip command with multiple matches and return stripped command or false */
     private String processCommand(String command, String[] matches) {
-        for (int i = 0; i < matches.length; i++) {
-            command = command.replaceAll(matches[i], "");
+        for (String match : matches) {
+            command = command.replaceAll(match, "");
         }
         return command;
     }

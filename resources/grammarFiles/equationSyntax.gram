@@ -29,15 +29,15 @@ grammar equationSyntax;
 <ln> = ( [ the ] natural log of );
 
 // Defines a term & different types of operator
-<term> = ( <structurePattern> | answer | pi | e );
+<term> = ( /30/ <structurePattern> | /20/ answer | /20/ pi | /10/ e );
 <group> = ( ( left parentheses ) ( <term> | <expression> ) ( right parentheses ) ) | ( <term> | <expression> );
 
-<leftRightOperator> = ( <add> | <subtract> | <divide> | <multiply> | <exponentRaise> );
+<leftRightOperator> = ( /30/ <add> | /30/ <subtract> | /30/ <divide> | /30/ <multiply> | /20/ <exponentRaise> );
 <leftOperator> = ( <factorial> | <percent> );
-<rightOperator> = ( <sqrt> | <sin> | <cos> | <tan> | <csc> | <sec> | <cot> | <log10> | <ln> );
+<rightOperator> = ( /30/ <sqrt> | /30/ <sin> | /30/ <cos> | /30/ <tan> | /15/ <csc> | /15/ <sec> | /15/ <cot> | /10/ <log10> | /10/ <ln> );
 
 // Defines an expression
 <appliedLeftRight> = ( <group> <leftRightOperator> <group> );
 <appliedLeft> = ( <group> <leftOperator> );
 <appliedRight> = ( <rightOperator> <group> );
-public <expression> = ( <appliedLeftRight> | <appliedLeft> | <appliedRight> );
+public <expression> = ( /30/ <appliedLeftRight> | /10/ <appliedLeft> | /20/ <appliedRight> );
