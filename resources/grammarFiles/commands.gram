@@ -18,4 +18,4 @@ import <equationSyntax.*>;
 <setCalculatorMode> = <setKeyphrase> calculator mode to ( express | regular | normal );
 <getAnswers> = <getKeyphrase> ( previous ( answer | result ) | ( answer | result ) );
 <getMode> = ( what is ) [ the ] [ current ] ( ( angle mode ) | ( calculator mode ) );
-public <command> = \30\ <keyphrase> | \30\ <calculate> | \5\ <setAngleMode> | \5\ <setCalculatorMode> | \15\ <getAnswers> | \5\ <getMode>;
+public <command> = /30/ <keyphrase> | /30/ <calculate> | /5/ <setAngleMode> | /5/ <setCalculatorMode> | /15/ <getAnswers> | /5/ <getMode>;
