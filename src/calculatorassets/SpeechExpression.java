@@ -166,12 +166,12 @@ public class SpeechExpression {
     /** Build HashMap for word/function matching */
     private static void buildWordMap() {  // e not listed but directly implemented due to technical issues
         String[] validFunctions = {"left parentheses", "right parentheses", "plus", "minus", "(divided by)|(over)",
-                "times", "(multiplied by)|(times)", "to the power( of)?", "(the )?(square )?root( of)?", "percent",
-                "fact or eel", "(the )?sign( of)?", "(the )?co sign( of)?", "(the )?tangent( of)?",
-                "(the )?co see can't( of)?", "(the )?see can't( of)?", "(the )?co tangent( of)?",
-                "(the )?natural log( of)?", "(the )?log( of)?", "pi"};
-        String[] functionSymbols = {"(", ")", "+", "-", "/", "*", "*", "^", "sqrt", "* 0.01",
-                "!", "sin", "cos", "tan", "csc", "sec", "cot", "ln", "log", Double.toString(Math.PI)};
+                "(multiplied by)|(times)", "to the power of?", "(the )?(square )?root( of)?", "percent",
+                "fact or eel", "(the )?sign of", "(the )?co sign of", "(the )?co tangent of",
+                "(the )?tangent of", "(the )?co see can't of", "(the )?see can't of",
+                "(the )?natural log of", "(the )?log of", "pi"};
+        String[] functionSymbols = {"(", ")", "+", "-", "/", "*", "^", "sqrt", "* 0.01",
+                "!", "sin", "cos", "cot", "tan", "csc", "sec", "ln", "log", Double.toString(Math.PI)};
         for (int i = 0; i < validFunctions.length; i++) {
             wordMap.put(validFunctions[i], functionSymbols[i]);
         }
@@ -209,11 +209,14 @@ public class SpeechExpression {
             medium.append(" ").append(e);
         }
         convertedExpression = medium.deleteCharAt(0).toString();
+
+        System.out.println(convertedExpression);
     }
 
     /** Get acousticRepresentation */
     public String getAcousticRepresentation() {
-        return acousticRepresentation;
+        return acousticRepresentation.replaceAll("co sign", "co-sign").replaceAll("co see can't",
+                "co-see-can't").replaceAll("co tangent", "co-tangent");
     }
 
     /** Set acousticRepresentation */
@@ -320,7 +323,7 @@ public class SpeechExpression {
     }
 
     /** Calculate result */
-    public void calculateResult() {
+    private void calculateResult() {
         if (isValid()) {
             currentWord = splitExpression[0];
             currentIndex = 0;
@@ -387,7 +390,7 @@ public class SpeechExpression {
             else if (strIsEqual("log")) x = new BigDecimal(Math.log10(parseGroup().doubleValue()));
             else if (strIsEqual("ln")) x = new BigDecimal(Math.log(parseGroup().doubleValue()));
 
-            if (isRad) {  // Radians todo: add throwing arithmeticexception when doing undefined stuff
+            if (isRad) {  // Radians
                 if (strIsEqual("sin")) x = new BigDecimal(Math.sin(parseAS().doubleValue()));
                 else if (strIsEqual("cos")) x = new BigDecimal(Math.cos(parseAS().doubleValue()));
                 else if (strIsEqual("tan")) x = new BigDecimal(Math.tan(parseAS().doubleValue()));

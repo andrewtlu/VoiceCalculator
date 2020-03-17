@@ -125,8 +125,8 @@ public class VoiceCalculator {
                                 // Get the hypothesis
                                 speechRecognitionResult = speechResult.getHypothesis();
 
-                                // Print said phrase
-                                System.out.println("Said phrase: [" + speechRecognitionResult + "]\n");
+                                // Print recognized phrase
+                                System.out.println("Recognized phrase: [" + speechRecognitionResult + "]\n");
 
                                 // Do something with command
                                 if (express) makeDecisionExpress(speechRecognitionResult);
