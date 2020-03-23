@@ -25,15 +25,15 @@ public class SpeechExpression {
 
 
     private String acousticRepresentation;
-    private String convertedExpression;  // Converted numbers and answer variable
-    private String[] splitExpression;  // For actual processing
+    private String convertedExpression;  // Expression understandable by SpeechExpression
+    private String[] splitExpression;
     private BigDecimal result = new BigDecimal(0);
     private BigDecimal previousResult = new BigDecimal(0);
 
     // Variables for parsing
     private int currentIndex = 0;
     private String currentWord;
-    private boolean isRad = true;  // true = radians, false = degrees
+    private boolean isRad = true;
 
     // Regex for numbers
     private static String validNumbers = "((one|two|three|four|five|six|seven|eight|nine) ?)";
@@ -84,19 +84,17 @@ public class SpeechExpression {
         while (i < splitString.length) {
             if (numberMap.get(splitString[i]) != null || splitString[i].equals(("point")) || splitString[i].equals("negative")) runHasNumber = true;
 
-            // Marks number start and end indices
             while (i < splitString.length && (numberMap.get(splitString[i]) != null || splitString[i].equals(("point"))
                     || splitString[i].equals("negative"))) {
                 splitNumber.append(splitString[i++]).append(" ");
             }
 
-            // If there was a number in this run append it to the string
             if (runHasNumber) {
                 processedString.append(convertToNumberValue(splitNumber.toString())).append(" ");
                 splitNumber.setLength(0);
                 runHasNumber = false;
             }
-            else {  // Else skip number
+            else {
                 processedString.append(splitString[i]).append(" ");
                 splitNumber.setLength(0);
                 i++;
@@ -215,8 +213,8 @@ public class SpeechExpression {
 
     /** Get acousticRepresentation */
     public String getAcousticRepresentation() {
-        return acousticRepresentation.replaceAll("co sign", "co-sign").replaceAll("co see can't",
-                "co-see-can't").replaceAll("co tangent", "co-tangent");
+        return acousticRepresentation.replaceAll("co sign", "coe sign").replaceAll("co see can't",
+                "coe-see-kent").replaceAll("co tangent", "coe-tangent");
     }
 
     /** Set acousticRepresentation */
@@ -257,7 +255,7 @@ public class SpeechExpression {
     /** Check if expression is valid */
     private boolean isValid() {
         // Char type 0 = numbers, char type 1 = double operand operators, char type 2 = 1 operand prefix operators,
-        // char type 3 = 1 operand postfix operators type 3 = left parenthesis, char type 4 = right parenthesis
+        // char type 3 = 1 operand postfix operators, char type 4 = left parenthesis, char type 5 = right parenthesis
         byte charType, previousCharType;
         int unclosedCount = 0;
 
@@ -289,10 +287,10 @@ public class SpeechExpression {
 
                 /* Checks for different cases
                  * 1. Numbers and two operand operators cannot repeat
-                 * 2. Left parenthesis can't be preceded by a number or postfix operator (View note)
-                 * 3. Right parenthesis can't be preceded by an operator that takes an operand from behind
-                 * 4. Left parenthesis can't be followed by an operator that takes an operand from in front
-                 * 5. Right parenthesis can't be followed by a number/operator (View note)
+                 * 2. Left parentheses can't be preceded by a number or postfix operator (View note)
+                 * 3. Right parentheses can't be preceded by an operator that takes an operand from behind
+                 * 4. Left parentheses can't be followed by an operator that takes an operand from in front
+                 * 5. Right parentheses can't be followed by a number/operator (View note)
                  *
                  * Note: Calculator does not currently support implied multiplication (i.e. 2pi or 2(3 + 1))*/
                 if (previousCharType == charType && previousCharType < 2) return false;                          // 1
@@ -328,12 +326,12 @@ public class SpeechExpression {
             currentWord = splitExpression[0];
             currentIndex = 0;
 
-            BigDecimal gottenResult = parseAS();  // Intermediate value to check if the previousResult needs to be updated
+            BigDecimal gottenResult = parseAS();
 
             if (result != null && !previousResult.equals(gottenResult)) {
                 previousResult = result;
                 result = gottenResult;
-            } else if (!previousResult.equals(gottenResult)) previousResult = result = gottenResult; // Case where result == null
+            } else if (!previousResult.equals(gottenResult)) previousResult = result = gottenResult;
             else result = gottenResult;
         }
         else throw new RuntimeException("'" + convertedExpression + "' is not a valid expression.");
@@ -373,7 +371,7 @@ public class SpeechExpression {
         BigDecimal x = parseGroup();
         while (true) {
             if (strIsEqual("*")) x = x.multiply(parseGroup());
-            else if (strIsEqual("/")) x = x.divide(parseGroup(), BigDecimal.ROUND_HALF_UP);
+            else if (strIsEqual("/")) x = x.divide(parseGroup(), 12, BigDecimal.ROUND_HALF_UP);
             else return x;
         }
     }

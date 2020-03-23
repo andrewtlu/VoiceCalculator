@@ -3,14 +3,14 @@ grammar equationSyntax;
 
 // Copyright 2019 dinitrogen-tetroxide
 
-// Definitions for numbers
+// Numbers
 <zero> = ( zero | oh );
 <validNumbers> = ( one | two | three | four | five | six | seven | eight | nine );
 <digit> = ( <zero> | <validNumbers> );
 <basePattern> = ( ( <validNumbers> | ( ten | eleven | twelve | thirteen | fourteen | fifteen | sixteen | seventeen | eighteen | nineteen ) | ( ( twenty | thirty | forty | fifty | sixty | seventy | eighty | ninety ) [ <validNumbers> ] ) ) | ( ( <validNumbers> hundred ) ( [ twenty | thirty | forty | fifty | sixty | seventy | eighty | ninety ] [ <validNumbers> ] ) | ( ten | eleven | twelve | thirteen | fourteen | fifteen | sixteen | seventeen | eighteen | nineteen ) ) );
 <structurePattern> = ( [ negative ] [ ( [ <basePattern> billion ] [ <basePattern> million ] [ <basePattern> thousand ] [ <basePattern> ] ) | ( <zero> ) ] [ point [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] [ <digit> ] ] );
 
-// Define operators
+// Operators
 <add> = ( plus );
 <subtract> = ( minus );
 <divide> = ( over | ( divided by ) );
@@ -28,8 +28,8 @@ grammar equationSyntax;
 <log10> = ( [ the ] log of );
 <ln> = ( [ the ] natural log of );
 
-// Defines a term & different types of operator
-<term> = ( /30/ <structurePattern> | /20/ answer | /20/ pi | /10/ e );
+// Defines a term & different types of operators
+<term> = ( /30/ <structurePattern> | /20/ [ the ] answer | /20/ pi | /10/ e );
 <group> = ( ( left parentheses ) ( <term> | <expression> ) ( right parentheses ) ) | ( <term> | <expression> );
 
 <leftRightOperator> = ( /30/ <add> | /30/ <subtract> | /30/ <divide> | /30/ <multiply> | /20/ <exponentRaise> );
@@ -40,4 +40,5 @@ grammar equationSyntax;
 <appliedLeftRight> = ( <group> <leftRightOperator> <group> );
 <appliedLeft> = ( <group> <leftOperator> );
 <appliedRight> = ( <rightOperator> <group> );
+
 public <expression> = ( /30/ <appliedLeftRight> | /10/ <appliedLeft> | /20/ <appliedRight> );

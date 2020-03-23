@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b6879e4e-3b0f-416d-bcf7-99f179f23773" name="Default Changelist" comment="Further optimizations in main classes, fixed processing bug.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/grammarFiles/commands.gram" beforeDir="false" afterPath="$PROJECT_DIR$/resources/grammarFiles/commands.gram" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram" beforeDir="false" afterPath="$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/VoiceCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/VoiceCalculator.java" afterDir="false" />
     </list>
@@ -27,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/resources/grammarFiles/commands.gram">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="127" selection-start-line="20" selection-start-column="127" selection-end-line="20" selection-end-column="127" />
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -35,46 +37,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="714">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="411" column="59" selection-start-line="411" selection-start-column="59" selection-end-line="411" selection-end-column="59" />
+            <state relative-caret-position="476">
+              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#SpeechExpression#0;class#SpeechExpression#0" />
-                <element signature="method#replaceWordNumbers#0;class#SpeechExpression#0" />
                 <element signature="method#convertToNumberValue#0;class#SpeechExpression#0" />
                 <element signature="method#getPreviousResult#0;class#SpeechExpression#0" />
-                <element signature="method#getResult#0;class#SpeechExpression#0" />
                 <element signature="method#isValid#0;class#SpeechExpression#0" />
+                <element signature="method#calculateResult#0;class#SpeechExpression#0" />
                 <element signature="method#strIsEqual#0;class#SpeechExpression#0" />
                 <element signature="method#isValidNumber#0;class#SpeechExpression#0" />
                 <element signature="method#parseAS#0;class#SpeechExpression#0" />
                 <element signature="method#parseMD#0;class#SpeechExpression#0" />
+                <element signature="method#parseGroup#0;class#SpeechExpression#0" />
                 <element signature="method#factorial#0;class#SpeechExpression#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/VoiceCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="157" column="45" lean-forward="true" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
+            <state relative-caret-position="119">
+              <caret line="7" column="81" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#VoiceCalculator#0;class#VoiceCalculator#0" />
-                <element signature="method#startSpeechRecognition#0;class#VoiceCalculator#0" />
                 <element signature="method#makeDecision#0;class#VoiceCalculator#0" />
+                <element signature="e#6416#7582#0" />
+                <element signature="e#6573#7568#0" />
+                <element signature="e#7703#8400#0" />
+                <element signature="e#8493#9759#0" />
+                <element signature="e#9944#10761#0" />
+                <element signature="e#10801#10886#1" />
                 <element signature="method#makeDecisionExpress#0;class#VoiceCalculator#0" />
+                <element signature="e#11240#12355#0" />
+                <element signature="e#12476#13140#0" />
+                <element signature="e#13233#14232#0" />
+                <element signature="e#14417#15051#0" />
+                <element signature="e#15091#15158#1" />
                 <element signature="method#commandMatches#0;class#VoiceCalculator#0" />
                 <element signature="method#processCommand#0;class#VoiceCalculator#0" />
               </folding>
@@ -145,25 +156,24 @@
         <option value="$PROJECT_DIR$/src/tts/AudioPlayer.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/tts/TextToSpeech.java" />
-        <option value="$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram" />
-        <option value="$PROJECT_DIR$/resources/grammarFiles/commands.gram" />
-        <option value="$PROJECT_DIR$/src/main/VoiceCalculator.java" />
         <option value="$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java" />
+        <option value="$PROJECT_DIR$/resources/grammarFiles/commands.gram" />
+        <option value="$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram" />
+        <option value="$PROJECT_DIR$/src/main/VoiceCalculator.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="870" />
-    <option name="y" value="66" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="951" />
+    <option name="y" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,6 +190,12 @@
               <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
               <item name="VoiceCalculator" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VoiceCalculator" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="grammarFiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="VoiceCalculator" type="b2602c69:ProjectViewProjectNode" />
@@ -209,6 +225,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,14 +305,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584358700497</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Further optimizations in main classes, fixed processing bug.">
+      <created>1584441636471</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584441636471</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18322147" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16845638" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -304,7 +328,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" x="769" y="30" width="767" height="793" id="Run" maximized="true" order="2" sideWeight="0.49932885" weight="0.34560907" />
+      <window_info active="true" anchor="bottom" x="769" y="30" width="767" height="793" id="Run" maximized="true" order="2" sideWeight="0.49932885" visible="true" weight="0.34560907" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -312,34 +336,6 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32719547" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.34560907" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.3286119" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4923717" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" x="769" y="30" width="767" height="793" id="Run" order="2" type="WINDOWED" weight="0.5368272" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39971346" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32808024" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -349,7 +345,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
@@ -496,50 +492,59 @@
     <entry file="file://$PROJECT_DIR$/resources/grammarFiles/commands.gram">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="127" selection-start-line="20" selection-start-column="127" selection-end-line="20" selection-end-column="127" />
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/grammarFiles/equationSyntax.gram">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/VoiceCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="157" column="45" lean-forward="true" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#VoiceCalculator#0;class#VoiceCalculator#0" />
-            <element signature="method#startSpeechRecognition#0;class#VoiceCalculator#0" />
-            <element signature="method#makeDecision#0;class#VoiceCalculator#0" />
-            <element signature="method#makeDecisionExpress#0;class#VoiceCalculator#0" />
-            <element signature="method#commandMatches#0;class#VoiceCalculator#0" />
-            <element signature="method#processCommand#0;class#VoiceCalculator#0" />
-          </folding>
+        <state relative-caret-position="714">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/calculatorassets/SpeechExpression.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="411" column="59" selection-start-line="411" selection-start-column="59" selection-end-line="411" selection-end-column="59" />
+        <state relative-caret-position="476">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#SpeechExpression#0;class#SpeechExpression#0" />
-            <element signature="method#replaceWordNumbers#0;class#SpeechExpression#0" />
             <element signature="method#convertToNumberValue#0;class#SpeechExpression#0" />
             <element signature="method#getPreviousResult#0;class#SpeechExpression#0" />
-            <element signature="method#getResult#0;class#SpeechExpression#0" />
             <element signature="method#isValid#0;class#SpeechExpression#0" />
+            <element signature="method#calculateResult#0;class#SpeechExpression#0" />
             <element signature="method#strIsEqual#0;class#SpeechExpression#0" />
             <element signature="method#isValidNumber#0;class#SpeechExpression#0" />
             <element signature="method#parseAS#0;class#SpeechExpression#0" />
             <element signature="method#parseMD#0;class#SpeechExpression#0" />
+            <element signature="method#parseGroup#0;class#SpeechExpression#0" />
             <element signature="method#factorial#0;class#SpeechExpression#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/VoiceCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="81" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#makeDecision#0;class#VoiceCalculator#0" />
+            <element signature="e#6416#7582#0" />
+            <element signature="e#6573#7568#0" />
+            <element signature="e#7703#8400#0" />
+            <element signature="e#8493#9759#0" />
+            <element signature="e#9944#10761#0" />
+            <element signature="e#10801#10886#1" />
+            <element signature="method#makeDecisionExpress#0;class#VoiceCalculator#0" />
+            <element signature="e#11240#12355#0" />
+            <element signature="e#12476#13140#0" />
+            <element signature="e#13233#14232#0" />
+            <element signature="e#14417#15051#0" />
+            <element signature="e#15091#15158#1" />
+            <element signature="method#commandMatches#0;class#VoiceCalculator#0" />
+            <element signature="method#processCommand#0;class#VoiceCalculator#0" />
           </folding>
         </state>
       </provider>

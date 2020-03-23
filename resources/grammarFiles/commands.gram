@@ -13,9 +13,10 @@ import <equationSyntax.*>;
 <setKeyphrase> = ( set | change ) [ the ];
 
 // Commands
-<calculate> = <calculateKeyphrase> <equationSyntax.expression>;
-<setAngleMode> = <setKeyphrase> angle mode to ( degrees | ray dee ins );
-<setCalculatorMode> = <setKeyphrase> calculator mode to ( express | regular | normal );
-<getAnswers> = <getKeyphrase> ( previous ( answer | result ) | ( answer | result ) );
+<calculate> = ( <calculateKeyphrase> <equationSyntax.expression> );
+<setAngleMode> = ( <setKeyphrase> angle mode to ( degrees | ray dee ins ) );
+<setCalculatorMode> = ( <setKeyphrase> calculator mode to ( express | regular | normal ) );
+<getAnswers> = ( <getKeyphrase> ( previous ( answer | result ) | ( answer | result ) ) );
 <getMode> = ( what is ) [ the ] [ current ] ( ( angle mode ) | ( calculator mode ) );
+
 public <command> = /30/ <keyphrase> | /30/ <calculate> | /5/ <setAngleMode> | /5/ <setCalculatorMode> | /15/ <getAnswers> | /5/ <getMode>;

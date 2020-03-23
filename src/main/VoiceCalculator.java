@@ -5,7 +5,7 @@ package main;
  *
  * Copyright 2017 goxr3plus, Copyright 2019 dinitrogen-tetroxide
  *
- * Original code modified and used as a starting point of project (Specifically, the multithreading parts)
+ * Original code modified and used as a starting class structure for the project.
  *
  * Code written in Java 1.8
  *
@@ -59,9 +59,8 @@ public class VoiceCalculator {
     private TextToSpeech tts = new TextToSpeech();
     private boolean express = false;
 
-    private boolean listenForKeyword = true;  // Tells thread whether or not to listen for a keyword
+    private boolean listenForKeyword = true;
 
-    // Thread variables
     private boolean speechRecognizerThreadRunning = false;
     private ExecutorService eventsExecutorService = Executors.newFixedThreadPool(2);
 
@@ -71,17 +70,14 @@ public class VoiceCalculator {
 
         /* Speech to Text Portion */
 
-        // Defines new configuration object
+        // Configurations
         Configuration configuration = new Configuration();
-
-        // Load models from jar and define grammar
         configuration.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
         configuration.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
         configuration.setGrammarPath("resources/grammarFiles");
         configuration.setGrammarName("commands");
         configuration.setUseGrammar(true);
 
-        // Initializes LiveSpeechRecognizer, catching IOException
         try {
             recognizer = new LiveSpeechRecognizer(configuration);
         } catch (IOException ex) {
@@ -100,40 +96,31 @@ public class VoiceCalculator {
         if (speechRecognizerThreadRunning)
             logger.log(Level.INFO, "Speech Recognition Thread already running.\n");  // Checks if thread is running
         else {
-            // Calls submit method
             eventsExecutorService.submit(() -> {
-                // Locks usage
                 speechRecognizerThreadRunning = true;
                 listenForKeyword = true;
 
-                // Start Recognition
                 recognizer.startRecognition(true);
                 logger.log(Level.INFO, "Voice Calculator is ready.\n");
                 tts.speak("Voice calculator is ready");
 
                 try {
                     while (speechRecognizerThreadRunning) {
-                        // Gets hypothesis from recognizer
                         SpeechResult speechResult = recognizer.getResult();
 
-                        // Check if we ignore the speech recognition results
                         if (!listenForKeyword) {
-                            // Check the result
                             if (speechResult == null)
                                 logger.log(Level.INFO, "Speech not understood.\n");
                             else {
-                                // Get the hypothesis
                                 speechRecognitionResult = speechResult.getHypothesis();
 
-                                // Print recognized phrase
                                 System.out.println("Recognized phrase: [" + speechRecognitionResult + "]\n");
 
-                                // Do something with command
                                 if (express) makeDecisionExpress(speechRecognitionResult);
                                 else makeDecision(speechRecognitionResult);
                             }
 
-                            listenForKeyword = true;  // Continue listening for keyword
+                            listenForKeyword = true;
                         } else {
                             if (speechResult.getHypothesis().equals("voice calculator")) {
                                 tts.speak("Yes?", 2.0f, false, true);
@@ -182,7 +169,7 @@ public class VoiceCalculator {
                     default:
                         tts.speak("Set parameters not understood, please try again.");
                 }
-            }  // Set command
+            }
             else if (commandMatches(speech, new String[]{"^(get )(the )?.*", "^(what was )(the )?.*"})) {
                 processedCommand = processCommand(speech, new String[]{"^(get the )", "^(what was the )"});
 
@@ -198,7 +185,7 @@ public class VoiceCalculator {
                     default:
                         tts.speak("Get parameters not understood, please try again.");
                 }
-            }  // Get command
+            }
             else if (commandMatches(speech, new String[]{"^(what is ).*"})) {
                 processedCommand = processCommand(speech, new String[]{"^(what is )(the )?(current )?(value of )?"});
 
@@ -220,7 +207,7 @@ public class VoiceCalculator {
                         tts.speak("Calculator expression not understood, please try again.");
                     }
                 }
-            }  // What is "ambiguous case" command
+            }
             else if (commandMatches(speech, new String[]{"^(compute )(the value of )?.*",
                     "^(calculate )(the value of )?.*"})) {
                 processedCommand = processCommand(speech, new String[]{"^(compute )(the value of )?",
@@ -235,7 +222,7 @@ public class VoiceCalculator {
                 } catch (RuntimeException ex) {
                     tts.speak("Calculator expression not understood, please try again.");
                 }
-            }  // Calculate command
+            }
             else {
                 tts.speak("Input not understood, please try again.");
             }
@@ -272,7 +259,7 @@ public class VoiceCalculator {
                     default:
                         tts.speak("Parameters not understood.");
                 }
-            }  // Set command
+            }
             else if (commandMatches(speech, new String[]{"^(get )(the )?.*", "^(what was )(the )?.*"})) {
                 processedCommand = processCommand(speech, new String[]{"^(get )(the )?", "^(what was )(the )?"});
 
@@ -288,7 +275,7 @@ public class VoiceCalculator {
                     default:
                         tts.speak("Parameters not understood.");
                 }
-            }  // Get command
+            }
             else if (commandMatches(speech, new String[]{"^(what is ).*"})) {
                 processedCommand = processCommand(speech, new String[]{"^(what is )(the )?(current )?(value of )?"});
 
@@ -309,7 +296,7 @@ public class VoiceCalculator {
                         tts.speak("Parameters not understood.");
                     }
                 }
-            }  // What is "ambiguous case" command
+            }
             else if (commandMatches(speech, new String[]{"^(compute )(the value of )?.*",
                     "^(calculate )(the value of )?.*"})) {
                 processedCommand = processCommand(speech, new String[]{"^(compute )(the value of )?",
@@ -323,7 +310,7 @@ public class VoiceCalculator {
                 } catch (RuntimeException ex) {
                     tts.speak("Parameters not understood.");
                 }
-            }  // Calculate command
+            }
             else {
                 tts.speak("Input not understood.");
             }
