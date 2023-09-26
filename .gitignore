@@ -4,3 +4,13 @@
 
 # Ignore MaryTTS server log
 *.log
+
+# Ignore VSCode files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
