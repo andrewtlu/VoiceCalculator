@@ -1,4 +1,4 @@
-package main;
+package com.andrewtlu;
 
 /* Code base:
  * https://github.com/goxr3plus/Java-Speech-Recognizer-Tutorial--Calculator/blob/master/Tutorial%201/src/model/SpeechRecognizerMain.java
@@ -38,12 +38,12 @@ package main;
  *   - Undefined trig functions return value close to infinity instead of throwing ArithmeticException
  */
 
-import calculatorassets.SpeechExpression;
+import com.andrewtlu.calculatorassets.SpeechExpression;
 
 import edu.cmu.sphinx.api.Configuration;
 import edu.cmu.sphinx.api.LiveSpeechRecognizer;
 import edu.cmu.sphinx.api.SpeechResult;
-import tts.TextToSpeech;
+import com.andrewtlu.tts.TextToSpeech;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;

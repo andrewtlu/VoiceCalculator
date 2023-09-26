@@ -1,4 +1,4 @@
-package calculatorassets;
+package com.andrewtlu.calculatorassets;
 
 /* Copyright 2019 dinitrogen-tetroxide
  *
