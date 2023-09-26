@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.andrewtlu</groupId>
-  <artifactId>voicecalculator</artifactId>
+  <artifactId>VoiceCalculator</artifactId>
   <version>v2.0-alpha</version>
 
   <name>voicecalculator</name>
@@ -13,18 +13,56 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
   </properties>
 
   <dependencies>
+    <!-- junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <!-- sphinx4 core -->
+    <dependency>
+      <groupId>edu.cmu.sphinx</groupId>
+      <artifactId>sphinx4-core</artifactId>
+      <version>5prealpha-SNAPSHOT</version>
+    </dependency>
+    <!-- sphinx4 data -->
+    <dependency>
+      <groupId>edu.cmu.sphinx</groupId>
+      <artifactId>sphinx4-data</artifactId>
+      <version>5prealpha-SNAPSHOT</version>
+    </dependency>
+    <!-- marytts -->
+    <dependency>
+      <groupId>de.dfki.mary</groupId>
+      <artifactId>voice-cmu-slt-hsmm</artifactId> 
+      <version>5.2</version>
+    </dependency>
+    <!-- maybe add voice-cmu-rms-hsmm version 5.2? -->
   </dependencies>
+
+  <repositories>
+    <repository>
+        <id>snapshots-repo</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+
+		<repository>
+			<id>central</id>
+			<name>jcenter</name>
+			<url>https://jcenter.bintray.com</url>
+		</repository>
+  </repositories>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

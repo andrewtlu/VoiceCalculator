@@ -1,13 +1,27 @@
 # VoiceCalculator v2.0-alpha
 
-## Calculator Info
+### TODOs:
+- Core:
+   - [x] Update Sphinx4
+   - [x] Update MaryTTS
+   - [x] Ensure maven builds
+   - [ ] Rewrite to fit in maven project
+- Enhancements
+   - [ ] More efficient equation processing
+   - [ ] Fix up regex/grammar files
+   - [ ] Custom BigInt/Float classes
+   - [ ] Allow easier input (pauses, etc)
+   - [ ] Adapt model to have better accuracy
+   - [ ] Fix up ReadMe
+
+
+### Calculator Info
 
 - Supports input from the positive/negative hundred billions to 10e-12 (12 decimal places)
   - Does not support changing float as of now
 - Can change between degrees and radians
 - Can get previous answer and current answer
-- Currently does not have multiple voices, however all this requires is a compatible voice.jar file and a
-         makeDecision implementation for it
+- Currently does not have multiple voices, however all this requires is a compatible voice.jar file and a makeDecision implementation for it
 - Allows for change from a regular mode to express (Speech output shortened for time)
 
 ### Calculator Defaults:
@@ -31,7 +45,6 @@
 ## Built With
 * [CMU's Sphinx4 Library](https://github.com/cmusphinx/sphinx4) & rms-hsmm voice
 * [MaryTTS](https://github.com/marytts/marytts)
-* [Java Version 1.8.0.221](https://www.oracle.com/technetwork/java/javase/8u221-relnotes-5480116.html)
 
 ## Metadata
 * Made with love by [Andrew Lu](https://github.com/andrewtlu)
