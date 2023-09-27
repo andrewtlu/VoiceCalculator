@@ -4,9 +4,10 @@
 - Core:
    - [x] Update Sphinx4
    - [x] Update MaryTTS
-   - [x] Ensure maven builds
-   - [ ] Rewrite to fit in maven project
+   - [ ] Ensure maven builds and works
+   - [ ] Rewrite to fit in maven project (currently broken)
 - Enhancements
+   - [ ] Exclude some dependencies to reduce Jar size
    - [ ] More efficient equation processing
    - [ ] Fix up regex/grammar files
    - [ ] Custom BigInt/Float classes

@@ -86,7 +86,7 @@ public class VoiceCalculator {
 
         /* Text to Speech Portion */
 
-        tts.setVoice("cmu-rms-hsmm");
+        tts.setVoice("cmu-slt-hsmm");
 
         startSpeechRecognition();  //Start speech recognition thread
     }
