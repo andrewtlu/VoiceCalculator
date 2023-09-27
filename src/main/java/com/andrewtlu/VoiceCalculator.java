@@ -43,7 +43,7 @@ import com.andrewtlu.calculatorassets.SpeechExpression;
 import edu.cmu.sphinx.api.Configuration;
 import edu.cmu.sphinx.api.LiveSpeechRecognizer;
 import edu.cmu.sphinx.api.SpeechResult;
-import com.andrewtlu.tts.TextToSpeech;
+// import com.andrewtlu.tts.TextToSpeech;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
@@ -56,7 +56,7 @@ public class VoiceCalculator {
     private Logger logger = Logger.getLogger(getClass().getName());
     private String speechRecognitionResult;
     private SpeechExpression expression = new SpeechExpression();
-    private TextToSpeech tts = new TextToSpeech();
+    // private TextToSpeech tts = new TextToSpeech();
     private boolean express = false;
 
     private boolean listenForKeyword = true;
@@ -86,7 +86,7 @@ public class VoiceCalculator {
 
         /* Text to Speech Portion */
 
-        tts.setVoice("cmu-slt-hsmm");
+        // tts.setVoice("voice-cmu-slt-hsmm");
 
         startSpeechRecognition();  //Start speech recognition thread
     }
@@ -102,7 +102,7 @@ public class VoiceCalculator {
 
                 recognizer.startRecognition(true);
                 logger.log(Level.INFO, "Voice Calculator is ready.\n");
-                tts.speak("Voice calculator is ready");
+                // tts.speak("Voice calculator is ready");
 
                 try {
                     while (speechRecognizerThreadRunning) {
@@ -123,7 +123,7 @@ public class VoiceCalculator {
                             listenForKeyword = true;
                         } else {
                             if (speechResult.getHypothesis().equals("voice calculator")) {
-                                tts.speak("Yes?", 2.0f, false, true);
+                                // tts.speak("Yes?", 2.0f, false, true);
                                 listenForKeyword = false;
                                 logger.log(Level.INFO, "Now listening for command.");
                             }
@@ -152,22 +152,22 @@ public class VoiceCalculator {
                 switch (processedCommand) {  // todo: test switch statement
                     case "angle mode to degrees":
                         expression.setIsRadian(false);
-                        tts.speak("The angle mode is now in degrees.");
+                        // tts.speak("The angle mode is now in degrees.");
                         break;
                     case "angle mode to ray dee ins":
                         expression.setIsRadian(true);
-                        tts.speak("The angle mode is now in ray dee ins.");
+                        // tts.speak("The angle mode is now in ray dee ins.");
                         break;
                     case "calculator mode to express":
                         express = true;
-                        tts.speak("Mode set to express.");
+                        // tts.speak("Mode set to express.");
                         break;
                     case "calculator mode to regular":
                     case "calculator mode to normal":
-                        tts.speak("The calculator is already in normal mode.");
+                        // tts.speak("The calculator is already in normal mode.");
                         break;
                     default:
-                        tts.speak("Set parameters not understood, please try again.");
+                        // tts.speak("Set parameters not understood, please try again.");
                 }
             }
             else if (commandMatches(speech, new String[]{"^(get )(the )?.*", "^(what was )(the )?.*"})) {
@@ -176,35 +176,45 @@ public class VoiceCalculator {
                 switch (processedCommand) {
                     case "previous answer":
                     case "previous result":
-                        tts.speak("The previous answer was " + expression.getPreviousResult());
+                        // tts.speak("The previous answer was " + expression.getPreviousResult());
+                        logger.log(Level.INFO, expression.getPreviousResult().toString());
                         break;
                     case "answer":
                     case "result":
-                        tts.speak("The answer was " + expression.getResult());
+                        // tts.speak("The answer was " + expression.getResult());
+                        logger.log(Level.INFO, expression.getResult().toString());
                         break;
                     default:
-                        tts.speak("Get parameters not understood, please try again.");
+                        // tts.speak("Get parameters not understood, please try again.");
                 }
             }
             else if (commandMatches(speech, new String[]{"^(what is ).*"})) {
                 processedCommand = processCommand(speech, new String[]{"^(what is )(the )?(current )?(value of )?"});
 
                 if (processedCommand.equals("angle mode")) {
-                    if (expression.isRad()) tts.speak("The current angle mode is ray dee ins");
-                    else tts.speak("The current angle mode is degrees");
+                    if (expression.isRad()) {
+                        // tts.speak("The current angle mode is ray dee ins");
+                        logger.log(Level.INFO, "Radians");
+                    }
+                    else {
+                        // tts.speak("The current angle mode is degrees");
+                        logger.log(Level.INFO, "Degrees");
+                    }
                 }
                 else if (processedCommand.equals("calculator mode")) {
-                    tts.speak("The calculator is currently in normal mode.");
+                    // tts.speak("The calculator is currently in normal mode.");
                 }
                 else {
                     try {  // Calculate result and return to user
                         expression.setAcousticRepresentation(processedCommand);
-                        tts.speak("The result of " + expression.getAcousticRepresentation() + " is equal to " +
-                                expression.getResult());
+                        // tts.speak("The result of " + expression.getAcousticRepresentation() + " is equal to " +
+                        //         expression.getResult());
+                        logger.log(Level.INFO, expression.getResult().toString());
                     } catch (ArithmeticException ex) {  // Divide by zero error
-                        tts.speak("The result of " + expression.getAcousticRepresentation() + " is undefined.");
+                        // tts.speak("The result of " + expression.getAcousticRepresentation() + " is undefined.");
+                        logger.log(Level.INFO, "undef");
                     } catch (RuntimeException ex) {
-                        tts.speak("Calculator expression not understood, please try again.");
+                        // tts.speak("Calculator expression not understood, please try again.");
                     }
                 }
             }
@@ -215,19 +225,23 @@ public class VoiceCalculator {
 
                 try {  // Calculate result and return to user
                     expression.setAcousticRepresentation(processedCommand);
-                    tts.speak("The result of " + expression.getAcousticRepresentation() + " is equal to " +
-                            expression.getResult());
+                    // tts.speak("The result of " + expression.getAcousticRepresentation() + " is equal to " +
+                    //         expression.getResult());
+                    logger.log(Level.INFO, expression.getResult().toString());
                 } catch (ArithmeticException ex) {  // Divide by zero error
-                    tts.speak("The result of " + expression.getAcousticRepresentation() + " is undefined.");
+                    // tts.speak("The result of " + expression.getAcousticRepresentation() + " is undefined.");
+                        logger.log(Level.INFO, "undef");
                 } catch (RuntimeException ex) {
-                    tts.speak("Calculator expression not understood, please try again.");
+                    // tts.speak("Calculator expression not understood, please try again.");
                 }
             }
             else {
-                tts.speak("Input not understood, please try again.");
+                // tts.speak("Input not understood, please try again.");
+                logger.log(Level.INFO, "Bad input.");
             }
         } catch (RuntimeException ex) {
-            tts.speak("Input not understood, please try again.");
+            // tts.speak("Input not understood, please try again.");
+            logger.log(Level.INFO, "Bad input.");
         }
     }
 
@@ -242,22 +256,22 @@ public class VoiceCalculator {
                 switch (processedCommand) {  // todo: test switch statement
                     case "angle mode to degrees":
                         expression.setIsRadian(false);
-                        tts.speak("Mode set to degrees.");
+                        // tts.speak("Mode set to degrees.");
                         break;
                     case "angle mode to ray dee ins":
                         expression.setIsRadian(true);
-                        tts.speak("Mode set to radians.");
+                        // tts.speak("Mode set to radians.");
                         break;
                     case "calculator mode to express":
-                        tts.speak("Mode is already express.");
+                        // tts.speak("Mode is already express.");
                         break;
                     case "calculator mode to regular":
                     case "calculator mode to normal":
                         express = false;
-                        tts.speak("The calculator is now in normal mode.");
+                        // tts.speak("The calculator is now in normal mode.");
                         break;
                     default:
-                        tts.speak("Parameters not understood.");
+                        // tts.speak("Parameters not understood.");
                 }
             }
             else if (commandMatches(speech, new String[]{"^(get )(the )?.*", "^(what was )(the )?.*"})) {
@@ -266,34 +280,43 @@ public class VoiceCalculator {
                 switch (processedCommand) {
                     case "previous answer":
                     case "previous result":
-                        tts.speak(expression.getPreviousResult().toPlainString());
+                        // tts.speak(expression.getPreviousResult().toPlainString());
+                        logger.log(Level.INFO, expression.getPreviousResult().toString());
                         break;
                     case "answer":
                     case "result":
-                        tts.speak(expression.getResult().toPlainString());
+                        // tts.speak(expression.getResult().toPlainString());
+                        logger.log(Level.INFO, expression.getResult().toString());
                         break;
                     default:
-                        tts.speak("Parameters not understood.");
+                        // tts.speak("Parameters not understood.");
                 }
             }
             else if (commandMatches(speech, new String[]{"^(what is ).*"})) {
                 processedCommand = processCommand(speech, new String[]{"^(what is )(the )?(current )?(value of )?"});
 
                 if (processedCommand.equals("angle mode")) {
-                    if (expression.isRad()) tts.speak("Ray dee ins.");
-                    else tts.speak("Degrees.");
+                    if (expression.isRad()) {
+                        // tts.speak("Ray dee ins.");
+                        logger.log(Level.INFO, "Radians");
+                    } else {
+                        // tts.speak("Degrees.");
+                        logger.log(Level.INFO, "Degrees");
+                    }
                 }
                 else if (processedCommand.equals("calculator mode")) {
-                    tts.speak("Express mode.");
+                    // tts.speak("Express mode.");
                 }
                 else {
                     try {  // Calculate result and return to user
                         expression.setAcousticRepresentation(processedCommand);
-                        tts.speak(expression.getResult().toPlainString());
+                        // tts.speak(expression.getResult().toPlainString());
+                        logger.log(Level.INFO, expression.getResult().toString());
                     } catch (ArithmeticException ex) {  // Divide by zero error
-                        tts.speak("Undefined.");
+                        // tts.speak("Undefined.");
+                        logger.log(Level.INFO, "undef");
                     } catch (RuntimeException ex) {
-                        tts.speak("Parameters not understood.");
+                        // tts.speak("Parameters not understood.");
                     }
                 }
             }
@@ -304,18 +327,22 @@ public class VoiceCalculator {
 
                 try {  // Calculate result and return to user
                     expression.setAcousticRepresentation(processedCommand);
-                    tts.speak(expression.getResult().toPlainString());
+                    // tts.speak(expression.getResult().toPlainString());
+                    logger.log(Level.INFO, expression.getResult().toString());
                 } catch (ArithmeticException ex) {  // Divide by zero error
-                    tts.speak("Undefined.");
+                    // tts.speak("Undefined.");
+                    logger.log(Level.INFO, "undef");
                 } catch (RuntimeException ex) {
-                    tts.speak("Parameters not understood.");
+                    // tts.speak("Parameters not understood.");
                 }
             }
             else {
-                tts.speak("Input not understood.");
+                // tts.speak("Input not understood.");
+                logger.log(Level.INFO, "Bad input.");
             }
         } catch (RuntimeException ex) {
-            tts.speak("Input not understood.");
+            // tts.speak("Input not understood.");
+            logger.log(Level.INFO, "Bad input.");
         }
     }
 
